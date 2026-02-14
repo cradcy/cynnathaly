@@ -3,62 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <title>Para Nathaly 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{min-height:100vh;background:linear-gradient(160deg,#0b1a33,#000814,#000);font-family:'Segoe UI',sans-serif;overflow:hidden;color:white;position:relative;}
-.page{position:absolute;inset:0;display:none;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:20px;}
+body{
+  min-height:100vh;
+  background:linear-gradient(160deg,#0b1a33,#000814,#000);
+  font-family:'Segoe UI',sans-serif;
+  overflow:hidden;
+  color:white;
+  position:relative;
+}
+.page{
+  position:absolute;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  padding:5vw;
+}
 .page.active{display:flex;}
-.tap{padding:12px 30px;border-radius:25px;background:#ff2f6d;border:none;color:white;font-size:1rem;cursor:pointer;animation:pulse 1.5s infinite;box-shadow:0 0 15px rgba(255,47,109,0.6);z-index:10;position:relative;margin-top:25px;}
+
+.tap{
+  padding:4vw 8vw;
+  border-radius:25px;
+  background:#ff2f6d;
+  border:none;
+  color:white;
+  font-size:4vw;
+  cursor:pointer;
+  animation:pulse 1.5s infinite;
+  box-shadow:0 0 15px rgba(255,47,109,0.6);
+  z-index:10;
+  position:relative;
+  margin-top:5vw;
+  min-width:120px;
+}
+
 @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
-.letter{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border-radius:20px;padding:25px;max-width:520px;box-shadow:0 0 40px rgba(0,0,0,0.4);animation:zoomIn 1.5s ease;position:relative;}
-.stars{position:fixed;inset:0;z-index:-3;background:
-radial-gradient(1px 1px at 5% 10%, #fff, transparent),
-radial-gradient(1px 1px at 15% 30%, #fff, transparent),
-radial-gradient(1px 1px at 25% 70%, #fff, transparent),
-radial-gradient(1px 1px at 35% 20%, #fff, transparent),
-radial-gradient(1px 1px at 45% 50%, #fff, transparent),
-radial-gradient(1px 1px at 55% 80%, #fff, transparent),
-radial-gradient(1px 1px at 65% 40%, #fff, transparent),
-radial-gradient(1px 1px at 75% 60%, #fff, transparent),
-radial-gradient(1px 1px at 85% 30%, #fff, transparent),
-radial-gradient(1px 1px at 95% 70%, #fff, transparent);
-background-size:300px 300px;
-animation:starsMove 120s linear infinite;}
+
+.letter{
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(10px);
+  border-radius:20px;
+  padding:5vw;
+  max-width:90vw;
+  box-shadow:0 0 40px rgba(0,0,0,0.4);
+  animation:zoomIn 1.5s ease;
+  position:relative;
+}
+
+/* Estrellas */
+.stars{
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background:
+  radial-gradient(1px 1px at 5% 10%, #fff, transparent),
+  radial-gradient(1px 1px at 15% 30%, #fff, transparent),
+  radial-gradient(1px 1px at 25% 70%, #fff, transparent),
+  radial-gradient(1px 1px at 35% 20%, #fff, transparent),
+  radial-gradient(1px 1px at 45% 50%, #fff, transparent),
+  radial-gradient(1px 1px at 55% 80%, #fff, transparent),
+  radial-gradient(1px 1px at 65% 40%, #fff, transparent),
+  radial-gradient(1px 1px at 75% 60%, #fff, transparent),
+  radial-gradient(1px 1px at 85% 30%, #fff, transparent),
+  radial-gradient(1px 1px at 95% 70%, #fff, transparent);
+  background-size:300px 300px;
+  animation:starsMove 120s linear infinite;
+}
 @keyframes starsMove{from{transform:translateY(0);}to{transform:translateY(-2000px);}}
+
 .heartsRain{position:fixed;inset:0;pointer-events:none;z-index:-1;display:none;}
 .heart-drop{position:absolute;animation:fall linear forwards;}
 @keyframes fall{from{transform:translateY(-10vh);}to{transform:translateY(110vh);}}
+
 .firework{position:fixed;width:8px;height:8px;border-radius:50%;pointer-events:none;animation:explode 1.2s ease-out forwards;}
 @keyframes explode{0%{transform:scale(0.2);opacity:1;}60%{transform:scale(2.5);opacity:1;}100%{transform:translate(var(--x),var(--y)) scale(3.5);opacity:0;}}
+
 .fade-in{animation:fadeIn 2s ease;}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 .slide-up{animation:slideUp 1.5s ease;}
-@keyframes slideUp{from{transform:translateY(40px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@keyframes slideUp{from{transform:translateY(10px);opacity:0;}to{transform:translateY(0);opacity:1;}}
 .zoom-in{animation:zoomIn 1.5s ease;}
 @keyframes zoomIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
 .glow{animation:glow 2s infinite alternate;}
 @keyframes glow{from{text-shadow:0 0 5px #ff5fa2;}to{text-shadow:0 0 20px #ff9acb;}}
 
-/* FOTO FINAL CON GLOW */
+/* Foto final */
 .final-photo{
-  width:220px;
-  height:220px;
+  width:50vw;
+  max-width:220px;
+  height:auto;
   border-radius:50%;
   object-fit:cover;
-  border:4px solid #ff5fa2;
-  margin:20px 0;
+  border:4px solid white; /* borde blanco */
+  box-shadow:0 0 30px rgba(255,105,180,0.6);
+  animation:zoomIn 2s ease;
   cursor:pointer;
-  animation: zoomIn 2s ease, glowBorder 2s infinite alternate;
-  box-shadow:0 0 10px rgba(255,95,162,0.5);
-}
-@keyframes glowBorder{
-  from { box-shadow: 0 0 10px rgba(255,95,162,0.5); }
-  to   { box-shadow: 0 0 40px rgba(255,95,162,1); }
+  animation: glowBorder 2s infinite alternate;
 }
 
-.fake-btn{margin-top:15px;}
+/* efecto glow en el borde de la foto */
+@keyframes glowBorder{
+  0%{box-shadow:0 0 20px rgba(255,105,180,0.6);}
+  50%{box-shadow:0 0 40px rgba(255,105,180,0.8);}
+  100%{box-shadow:0 0 20px rgba(255,105,180,0.6);}
+}
+
+.fake-btn{margin-top:4vw;}
+
+/* Media queries móviles */
+@media (max-width:480px){
+  h1{font-size:6vw;}
+  h2{font-size:5vw;}
+  p{font-size:4.5vw;}
+  .tap{font-size:5vw;padding:4vw 8vw;}
+  .letter{padding:4vw;}
+  .final-photo{width:60vw;}
+}
 </style>
 </head>
+
 <body>
 
 <div class="stars" id="stars"></div>
@@ -79,15 +148,15 @@ animation:starsMove 120s linear infinite;}
 <div class="page fade-in">
   <div class="letter">
     <h2 class="glow">Para Nathaly 💘</h2>
-    <p class="slide-up">14/02/2026 🫶🏽</p>
-    <p class="slide-up">Eres mi persona favorita, eres increíble, dulce y muy especial para mi🌷</p>
+    <p class="slide-up">14/02/2026🫶🏽</p>
+    <p class="slide-up">Eres una persona increíble, dulce y muy especial 🌷</p>
   </div>
   <button class="tap" onclick="nextPage()">Seguir leyendo 💖</button>
 </div>
 
 <div class="page zoom-in">
   <div class="letter">
-    <p class="slide-up">Tu corazón vale oro, tu sonrisa y esa risa tan tierna iluminan mi vida ✨</p>
+    <p class="slide-up">Tu corazón vale oro y tu sonrisa ilumina mi vida ✨</p>
     <p class="slide-up">Gracias por cada abrazo, cada beso y cada momento ❤️</p>
   </div>
   <button class="tap" onclick="nextPage()">Continuar 💘</button>
@@ -95,17 +164,17 @@ animation:starsMove 120s linear infinite;}
 
 <div class="page fade-in">
   <div class="letter">
-    <p class="slide-up">Tu nombre ha dejado de ser solo palabras, ahora es todo lo que siento por ti, te amo mi Nathaly 💖</p>
+    <p class="slide-up">Te amo más de lo que las palabras pueden expresar 💖</p>
     <p class="slide-up">Feliz San Valentín mi amor, mi preciosura 🌹</p>
   </div>
-  <button class="tap" onclick="nextPage()">continuar 💞</button>
+  <button class="tap" onclick="nextPage()">Continuar 💞</button>
 </div>
 
 <!-- FINAL -->
 <div class="page zoom-in" style="position:relative;">
   <h1 class="glow">❤️‍🔥 Te amo mi Nathy ❤️‍🔥</h1>
   <img src="foto.jpg" class="final-photo" id="photoBtn" alt="Nathaly">
-  <p class="slide-up">Gracias por existir en mi vida, te extraño 🫂🫶🏽</p>
+  <p class="slide-up">Gracias por existir en mi vida 🫶🏽</p>
   <div id="finalButtons"></div>
   <button class="tap" id="startPrankBtn">¿Quieres repetirlo? 💫</button>
 </div>
@@ -212,14 +281,14 @@ document.getElementById('startPrankBtn').onclick=function(){
   const b2=document.createElement('button');
   b2.className='tap fake-btn';
   b2.innerText='¿Quizá este? 🫢';
-  b2.onclick=function(){alert('¡Casi Martha! 🙂‍↔️ casi.' );};
+  b2.onclick=function(){alert('¡Casi! 🙂‍↔️');};
   container.appendChild(b2);
   
   // Botón 3 falso
   const b3=document.createElement('button');
   b3.className='tap fake-btn';
   b3.innerText='¿O tal vez este? 🙀';
-  b3.onclick=function(){alert('¡Sigue intentando 🫶🏽 hermosa!');};
+  b3.onclick=function(){alert('¡Sigue intentando 🫶🏽!');};
   container.appendChild(b3);
   
   // Botón verdadero es la foto
