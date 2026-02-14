@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Nathaly 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{min-height:100vh;background:linear-gradient(160deg,#0b1a33,#000814,#000);font-family:'Segoe UI',sans-serif;overflow:hidden;color:white;position:relative;}
+.page{position:absolute;inset:0;display:none;justify-content:center;align-items:center;flex-direction:column;text-align:center;padding:20px;}
+.page.active{display:flex;}
+.tap{padding:12px 30px;border-radius:25px;background:#ff2f6d;border:none;color:white;font-size:1rem;cursor:pointer;animation:pulse 1.5s infinite;box-shadow:0 0 15px rgba(255,47,109,0.6);z-index:10;position:relative;margin-top:25px;}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+.letter{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border-radius:20px;padding:25px;max-width:520px;box-shadow:0 0 40px rgba(0,0,0,0.4);animation:zoomIn 1.5s ease;position:relative;}
+.stars{position:fixed;inset:0;z-index:-3;background:
+radial-gradient(1px 1px at 5% 10%, #fff, transparent),
+radial-gradient(1px 1px at 15% 30%, #fff, transparent),
+radial-gradient(1px 1px at 25% 70%, #fff, transparent),
+radial-gradient(1px 1px at 35% 20%, #fff, transparent),
+radial-gradient(1px 1px at 45% 50%, #fff, transparent),
+radial-gradient(1px 1px at 55% 80%, #fff, transparent),
+radial-gradient(1px 1px at 65% 40%, #fff, transparent),
+radial-gradient(1px 1px at 75% 60%, #fff, transparent),
+radial-gradient(1px 1px at 85% 30%, #fff, transparent),
+radial-gradient(1px 1px at 95% 70%, #fff, transparent);
+background-size:300px 300px;
+animation:starsMove 120s linear infinite;}
+@keyframes starsMove{from{transform:translateY(0);}to{transform:translateY(-2000px);}}
+.heartsRain{position:fixed;inset:0;pointer-events:none;z-index:-1;display:none;}
+.heart-drop{position:absolute;animation:fall linear forwards;}
+@keyframes fall{from{transform:translateY(-10vh);}to{transform:translateY(110vh);}}
+.firework{position:fixed;width:8px;height:8px;border-radius:50%;pointer-events:none;animation:explode 1.2s ease-out forwards;}
+@keyframes explode{0%{transform:scale(0.2);opacity:1;}60%{transform:scale(2.5);opacity:1;}100%{transform:translate(var(--x),var(--y)) scale(3.5);opacity:0;}}
+.fade-in{animation:fadeIn 2s ease;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+.slide-up{animation:slideUp 1.5s ease;}
+@keyframes slideUp{from{transform:translateY(40px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+.zoom-in{animation:zoomIn 1.5s ease;}
+@keyframes zoomIn{from{transform:scale(0.7);opacity:0;}to{transform:scale(1);opacity:1;}}
+.glow{animation:glow 2s infinite alternate;}
+@keyframes glow{from{text-shadow:0 0 5px #ff5fa2;}to{text-shadow:0 0 20px #ff9acb;}}
+
+/* FOTO FINAL CON GLOW */
+.final-photo{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #ff5fa2;
+  margin:20px 0;
+  cursor:pointer;
+  animation: zoomIn 2s ease, glowBorder 2s infinite alternate;
+  box-shadow:0 0 10px rgba(255,95,162,0.5);
+}
+@keyframes glowBorder{
+  from { box-shadow: 0 0 10px rgba(255,95,162,0.5); }
+  to   { box-shadow: 0 0 40px rgba(255,95,162,1); }
+}
+
+.fake-btn{margin-top:15px;}
+</style>
+</head>
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="heartsRain"></div>
+
+<!-- PÁGINAS -->
+<div class="page active fade-in">
+  <h1 class="glow">🌌 En un universo lleno de estrellas…</h1>
+  <p class="slide-up">hay un corazón que late solo por ti 💖</p>
+  <button class="tap" onclick="nextPage()">Continuar ✨</button>
+</div>
+
+<div class="page zoom-in">
+  <h2 class="glow">💌 Tengo una carta para ti</h2>
+  <button class="tap" onclick="nextPage()">Abrir carta 💌</button>
+</div>
+
+<div class="page fade-in">
+  <div class="letter">
+    <h2 class="glow">Para Nathaly 💘</h2>
+    <p class="slide-up">14/02/2026 🫶🏽</p>
+    <p class="slide-up">Eres mi persona favorita, eres increíble, dulce y muy especial para mi🌷</p>
+  </div>
+  <button class="tap" onclick="nextPage()">Seguir leyendo 💖</button>
+</div>
+
+<div class="page zoom-in">
+  <div class="letter">
+    <p class="slide-up">Tu corazón vale oro, tu sonrisa y esa risa tan tierna iluminan mi vida ✨</p>
+    <p class="slide-up">Gracias por cada abrazo, cada beso y cada momento ❤️</p>
+  </div>
+  <button class="tap" onclick="nextPage()">Continuar 💘</button>
+</div>
+
+<div class="page fade-in">
+  <div class="letter">
+    <p class="slide-up">Tu nombre ha dejado de ser solo palabras, ahora es todo lo que siento por ti, te amo mi Nathaly 💖</p>
+    <p class="slide-up">Feliz San Valentín mi amor, mi preciosura 🌹</p>
+  </div>
+  <button class="tap" onclick="nextPage()">continuar 💞</button>
+</div>
+
+<!-- FINAL -->
+<div class="page zoom-in" style="position:relative;">
+  <h1 class="glow">❤️‍🔥 Te amo mi Nathy ❤️‍🔥</h1>
+  <img src="foto.jpg" class="final-photo" id="photoBtn" alt="Nathaly">
+  <p class="slide-up">Gracias por existir en mi vida, te extraño 🫂🫶🏽</p>
+  <div id="finalButtons"></div>
+  <button class="tap" id="startPrankBtn">¿Quieres repetirlo? 💫</button>
+</div>
+
+<audio id="music" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const pages=document.querySelectorAll('.page');
+let current=0;
+const music=document.getElementById('music');
+const heartsContainer=document.querySelector('.heartsRain');
+const stars=document.getElementById('stars');
+let heartsInterval=null;
+
+/* Navegación */
+function nextPage(){
+  pages[current].classList.remove('active');
+  current++;
+  if(current < pages.length){
+    pages[current].classList.add('active');
+    if(current===1){music.play(); startHearts();}
+  }
+}
+
+/* Reinicio */
+function goHome(){
+  pages[current].classList.remove('active');
+  current=0;
+  pages[current].classList.add('active');
+  stopHearts();
+  resetStars();
+  document.getElementById('finalButtons').innerHTML='';
+  document.getElementById('startPrankBtn').style.display='inline-block';
+}
+
+/* Lluvia de corazones */
+function startHearts(){
+  heartsContainer.style.display='block';
+  clearInterval(heartsInterval);
+  heartsContainer.innerHTML='';
+  heartsInterval=setInterval(createHearts,1000);
+}
+function stopHearts(){
+  clearInterval(heartsInterval);
+  heartsContainer.innerHTML='';
+  heartsContainer.style.display='none';
+}
+function createHearts(){
+  for(let i=0;i<15;i++){
+    const h=document.createElement('div');
+    h.className='heart-drop';
+    h.innerText=['💗','💞','💕','💖','💘','💓'][Math.floor(Math.random()*6)];
+    h.style.left=Math.random()*100+'vw';
+    h.style.animationDuration=(6+Math.random()*6)+'s';
+    h.style.fontSize=(14+Math.random()*28)+'px';
+    h.style.opacity=(0.3 + Math.random()*0.7);
+    heartsContainer.appendChild(h);
+    setTimeout(()=>h.remove(),13000);
+  }
+}
+
+/* Fuegos artificiales */
+document.addEventListener('click',e=>{
+  if(e.target.classList.contains('tap')) return;
+  createFirework(e.clientX,e.clientY);
+});
+function createFirework(x,y){
+  const particles=35;
+  for(let i=0;i<particles;i++){
+    const f=document.createElement('div');
+    f.className='firework';
+    f.style.left=x+'px';
+    f.style.top=y+'px';
+    f.style.background=`hsl(${Math.random()*360},100%,70%)`;
+    f.style.setProperty('--x',(Math.random()*300-150)+'px');
+    f.style.setProperty('--y',(Math.random()*300-150)+'px');
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1200);
+  }
+}
+
+/* Reset estrellas */
+function resetStars(){
+  stars.style.animation='none';
+  stars.offsetHeight;
+  stars.style.animation='starsMove 120s linear infinite';
+}
+
+/* Botones falsos finales */
+document.getElementById('startPrankBtn').onclick=function(){
+  this.style.display='none';
+  const container=document.getElementById('finalButtons');
+  
+  // Botón 1 falso
+  const b1=document.createElement('button');
+  b1.className='tap fake-btn';
+  b1.innerText='¿Será este? 🤔';
+  b1.onclick=function(){alert('¡Jaja no era este! 🙈 pero si se puede 👌🏽');};
+  container.appendChild(b1);
+  
+  // Botón 2 falso
+  const b2=document.createElement('button');
+  b2.className='tap fake-btn';
+  b2.innerText='¿Quizá este? 🫢';
+  b2.onclick=function(){alert('¡Casi Martha! 🙂‍↔️ casi.' );};
+  container.appendChild(b2);
+  
+  // Botón 3 falso
+  const b3=document.createElement('button');
+  b3.className='tap fake-btn';
+  b3.innerText='¿O tal vez este? 🙀';
+  b3.onclick=function(){alert('¡Sigue intentando 🫶🏽 hermosa!');};
+  container.appendChild(b3);
+  
+  // Botón verdadero es la foto
+  const photoBtn=document.getElementById('photoBtn');
+  photoBtn.onclick=goHome;
+};
+</script>
+</body>
+</html>
